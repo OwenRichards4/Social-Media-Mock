@@ -1,0 +1,321 @@
+<style>
+  :host {
+    --bright-blue: oklch(51.01% 0.274 263.83);
+    --electric-violet: oklch(53.18% 0.28 296.97);
+    --french-violet: oklch(47.66% 0.246 305.88);
+    --vivid-pink: oklch(69.02% 0.277 332.77);
+    --hot-red: oklch(61.42% 0.238 15.34);
+    --orange-red: oklch(63.32% 0.24 31.68);
+
+    --gray-900: oklch(19.37% 0.006 300.98);
+    --gray-700: oklch(36.98% 0.014 302.71);
+    --gray-400: oklch(70.9% 0.015 304.04);
+
+    --red-to-pink-to-purple-vertical-gradient: linear-gradient(
+      180deg,
+      var(--orange-red) 0%,
+      var(--vivid-pink) 50%,
+      var(--electric-violet) 1%
+    );
+
+    --red-to-pink-to-purple-horizontal-gradient: linear-gradient(
+      90deg,
+      var(--orange-red) 0%,
+      var(--vivid-pink) 50%,
+      var(--electric-violet) 100%
+    );
+
+    --pill-accent: var(--bright-blue);
+
+    font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+      Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji",
+      "Segoe UI Symbol";
+    box-sizing: border-box;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  .flex {
+    position: relative;
+
+    display: flex; 
+    flex-direction: row; 
+    justify-content:  center;
+
+  }
+  
+  header {
+    margin: 0px;
+    padding-left: 30px;
+    
+    background-color: white;
+    box-shadow: 10px 8px 8px 0 rgb(216, 216, 216);
+
+    position: fixed;
+    width: 100vw;
+    height: 8vh;
+
+    z-index: 1;
+
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .header-icons {
+    position: relative;
+
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+
+    top: 5px;
+    right: 80px;
+  }
+
+  a {
+    text-decoration: none;
+    color: rgb(29, 29, 29);
+    font-size: 90%;
+  }
+
+  main {
+    position: relative;
+    top: 100px;
+
+    display: flex;
+
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+  }
+
+  .story-list {
+    position: relative;
+
+    display: flex;
+    gap: 30px;
+    align-items: center;
+
+    padding: 20px;
+    background-color: white;
+    box-shadow: 10px 8px 8px 0 rgb(216, 216, 216);
+
+    width: 25%;
+  }
+
+  .post-list {
+    padding: 20px;
+    background-color: white;
+    box-shadow: 10px 8px 8px 0 rgb(216, 216, 216);
+
+    width: 25%;
+
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .story-list img:hover {
+    cursor: pointer;
+  }
+
+  .left-toggle {
+    background-color: white;
+    padding: 20px 20px 0px 20px;
+
+    box-shadow: 10px 8px 8px 0 rgb(216, 216, 216);
+
+    position: fixed;
+    top: 8vh;
+    width: 12vw;
+    height: 100vh;
+  }
+
+  .right-toggle {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+
+    background-color: white;
+    padding: 20px 10px 0px 10px;
+
+    box-shadow: -10px 8px 8px 0 rgb(216, 216, 216);
+
+    position: fixed;
+    right: 0;
+    top: 8vh;
+    width: 12vw;
+    height: 100vh;
+  }
+
+  .left-toggle a {
+    display: flex;
+    gap: 20px;
+    align-items: center;
+  }
+
+  .right-toggle a {
+    display: flex;
+    gap: 20px;
+    align-items: center;
+    padding: 5px 10px;
+
+    border-radius: 20px;
+  }
+
+  .right-toggle a:hover {
+    background-color: rgb(241, 241, 241);
+  }
+
+  .name-message {
+    position: relative;
+
+    display: flex;
+    flex-direction: column;
+
+    line-height: 0px;
+    bottom: 7px;
+  }
+
+  .right-toggle h4 {
+    color: gray;
+    font-size: 80%;
+    padding: 0;
+    margin: 0;
+  }
+
+  .posted-images {
+    background-color: rgb(59, 59, 59);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+  }
+
+  .poster-info {
+    display: flex;
+    gap: 20px;
+  }
+
+  .description {
+    margin: 0;
+    color: rgb(44, 44, 44);
+    font-size: 95%;
+  }
+
+</style>
+<body>
+<header>
+  <h1>Postagram</h1>
+  <div class="header-icons">
+    <a href=""><img src="notification-icon.png" width="30px" height="30px"></a>
+    <a href=""><img src="likes-icon.png" width="32px" height="32px"></a>
+    <a href=""><img src="message-icon.png" width="32px" height="32px"></a>
+  </div>
+</header>
+<div class="left-toggle">
+  <a href="">
+    <img src="/home-icon.png" width="35" height="35" alt="home icon">
+    <h2>Home</h2>
+  </a>
+  <a href="">
+    <img src="/search-icon.png" width="35" height="35" alt="search icon">
+    <h2>Search</h2>
+  </a>
+  <a href="">
+    <img src="/message-icon.png" width="35" height="35" alt="message icon">
+    <h2>Messages</h2>
+  </a>
+  <a href="">
+    <img src="/post-icon.png" width="35" height="35" alt="post icon">
+    <h2>Post</h2>
+  </a>
+</div>
+<main class="main">
+  <div class="story-list">
+    <img src="/profile-img-1.png" width="55" height="55" alt="image for profile number 1">
+    <img src="/profile-img-2.png" width="55" height="55" alt="image for profile number 2">
+    <img src="/profile-img-3.png" width="55" height="55" alt="image for profile number 3">
+    <img src="/profile-img-4.png" width="55" height="55" alt="image for profile number 4">
+    <img src="/profile-img-5.png" width="55" height="55" alt="image for profile number 5">
+    <img src="/create-story-2.png" width="50" height="50" alt="image for profile number 5">
+  </div>
+  <div class="post-list">
+    <div class="poster-info">
+      <img src="/profile-img-5.png" width="55" height="55" alt="image for profile number 2">
+      <h3 class="poster-name">Katie</h3>
+    </div>
+    <div class="posted-images">
+      <img src="arrow.png" width="30px" height="15px" style="transform: rotate(90deg);">
+      <img src="/katie-posted photo.jpg" width="375px">
+      <img src="arrow.png" width="30px" height="15px" style="transform: rotate(-90deg);">
+    </div>
+    <h3 class="description">Went out to breakfast with the family, Always nice to see everyone and catch up!</h3>
+  </div>
+  <div class="post-list">
+    <div class="poster-info">
+      <img src="/profile-img-1.png" width="60" height="60" alt="image for profile number 2">
+      <h3 class="poster-name">Ryan</h3>
+    </div>
+    <div class="posted-images">
+      <img src="arrow.png" width="30px" height="15px" style="transform: rotate(90deg);">
+      <img src="/ryan-posted-photo.webp" width="375px">
+      <img src="arrow.png" width="30px" height="15px" style="transform: rotate(-90deg);">
+    </div>
+    <h3 class="description">Bought a new car today!</h3>
+  </div>
+  <div class="post-list">
+    <div class="poster-info">
+      <img src="/profile-img-2.png" width="55" height="55" alt="image for profile number 2">
+      <h3 class="poster-name">Owen</h3>
+    </div>
+    <div class="posted-images">
+      <img src="arrow.png" width="30px" height="15px" style="transform: rotate(90deg);">
+      <img src="/posted-photo.jpg" width="375px">
+      <img src="arrow.png" width="30px" height="15px" style="transform: rotate(-90deg);">
+    </div>
+    <h3 class="description">University of Cincinnati Graduate 2025!!</h3>
+  </div>
+</main>
+<div class="right-toggle">
+<a href="">
+  <img src="/profile-img-2.png" width="45" height="45" alt="image for profile number 2">
+  <div class="name-message">
+    <h3>Owen</h3>
+    <h4>How's the project going?</h4>
+  </div>
+</a>
+<a href="">
+  <img src="/profile-img-1.png" width="45" height="45" alt="image for profile number 1">
+  <div class="name-message">
+    <h3>Ryan</h3>
+    <h4>Anything new with you?</h4>
+  </div>
+</a>
+<a href="">
+  <img src="/profile-img-3.png" width="45" height="45" alt="image for profile number 3">
+  <div class="name-message">
+    <h3>Jackie</h3>
+    <h4>-- Sent a Reel --</h4>
+  </div>
+</a>
+<a href="">
+  <img src="/profile-img-4.png" width="45" height="45" alt="image for profile number 4">
+  <div class="name-message">
+    <h3>Molly</h3>
+    <h4>How's the family?</h4>
+  </div>
+</a>
+<a href="">
+  <img src="/profile-img-5.png" width="45" height="45" alt="image for profile number 5">
+  <div class="name-message">
+      <h3>Katie</h3>
+      <h4>How have you been?</h4>
+  </div>
+</a>
+</div>
+</body>
+<router-outlet />
