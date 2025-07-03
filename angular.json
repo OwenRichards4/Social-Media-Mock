@@ -7,7 +7,7 @@
       "projectType": "application",
       "schematics": {},
       "root": "",
-      "sourceRoot": "src",
+      "sourceRoot": ".",
       "prefix": "app",
       "architect": {
         "build": {
@@ -15,7 +15,6 @@
           "options": {
             "outputPath": "docs",
             "baseHref": "/Social-Media-Mock/",
-            "index": "src/index.html",
             "browser": "src/main.ts",
             "polyfills": [
               "zone.js"
